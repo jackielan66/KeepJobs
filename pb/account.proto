@@ -1,0 +1,152 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.dabanshan.grpc.domain";
+option java_outer_classname = "AccountProto";
+option objc_class_prefix = "DBS";
+
+package pb;
+
+enum AccountType{
+  SALER = 0; //卖
+  BUYER = 1; //买
+}
+
+enum AuthResult{
+  CREATED = 0;//待处理
+  PASS = 1;//通过
+  REJECT = 2;//拒绝
+}
+
+message CheckResult{
+  AuthResult result = 1;//认证结果
+  string message = 2; //备注信息
+}
+
+// 认证信息
+message AuthInfo{
+  string name = 1;//企业名称
+  string province = 2;//省代码
+  string city = 3; //市代码
+  string county = 4; //县代码
+  string address = 5;//地址
+  string contact = 6;//联系方式
+  string passport = 7;//执照图片地址
+  string accountId = 8;//账号标识
+  CheckResult result = 9;
+}
+
+message Account {
+    string id = 1;
+    string username = 2; //手机号
+    string password = 3; //密码
+    string name = 4; //姓名
+    string invite = 5; //邀请码
+    repeated AccountType roles = 6;//角色
+}
+
+message Tag {
+  string name = 1;
+}
+
+message CreateAccountRequest {
+    string username = 1;
+    string password = 2;
+}
+
+message CreateAccountResponse {
+    Account account = 1;
+}
+
+message GetAccountRequest {
+    string id = 1;
+}
+
+message GetAccountResponse {
+    Account account = 1;
+}
+
+message GetByTokenRequest{
+    string token = 1;
+}
+
+message GetByTokenResponse{
+    Account account = 1;
+}
+
+message GetByUsernameRequest{
+    string username = 1;
+    string password = 2;
+}
+
+message GetByUsernameResponse{
+    Account account = 1;
+}
+//Auth
+message CreateAuthInfoRequest {
+    AuthInfo authInfo = 1;
+}
+
+message CreateAuthInfoResponse {
+    bool created = 1;
+}
+
+message CreateCheckAuthInfoRequest {
+    string authid = 1;
+    CheckResult checkOpt = 2;
+}
+
+message CreateCheckAuthInfoResponse {
+    CheckResult result = 1;
+}
+
+message GetAuthInfoRequest{
+  string id = 1;
+}
+
+message GetAuthInfoResponse{
+  AuthInfo info = 1;
+}
+
+message UpdateSessionTokenRequest{
+  string accountid = 1;
+  string token = 2;
+}
+
+message UpdateSessionTokenResonse{
+  bool updated = 1;
+}
+
+message FollowUserRequest {
+  string accountid = 1;
+  string followid = 2;
+}
+
+message FollowUserResponse {
+  bool followed = 1;
+}
+
+message GetFollowsRequest {
+  string accountid = 1;
+}
+
+message GetFollowsResponse {
+  repeated Account accounts = 1;
+}
+
+message CreateTagsRequest {
+  string accountid = 1;
+  repeated Tag tags = 2;
+}
+
+message CreateTagsResonse {
+  bool created = 1;
+}
+
+message GetTagsRequest {
+  string accountid = 1;
+}
+
+message GetTagsResponse {
+  repeated Tag tags = 1;
+}

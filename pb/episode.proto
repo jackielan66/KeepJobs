@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.dabanshan.grpc.domain";
+option java_outer_classname = "EpisodeProto";
+option objc_class_prefix = "DBS";
+
+package pb;
+
+enum EpisodeStatus{
+  NORMAL = 0;
+  EXPIRED = 1;
+}
+
+message EpisodeHead {
+  string name = 1;//名称
+  string expire = 2;//过期时间
+  string accountid = 3;//所属账号
+  EpisodeStatus status = 4;//状态
+}
+
+//Episode, by saler. include item
+message EpisodeItem {
+  string productid = 1;
+  string name = 2;
+  float weight = 3; //重量（大约）
+  float quantity = 4;//数量
+  string unit = 5;//单位
+  string accountid = 6;
+}
+
+message Episode {
+  string id = 1;
+  EpisodeHead head = 2;
+  repeated EpisodeItem items = 3;
+}
+
+
+message CreateEpisodeRequest {
+  Episode episode = 1;
+}
+
+message CreateEpisodeResponse {
+  string revid = 1;
+}
+
+//offer::on
+message OfferHead {
+  string episodeid = 1;
+}
+
+message OfferItem {
+  string itemid = 1;
+  double price = 2;
+  int64 time = 3;
+}
+
+message Offer {
+  OfferHead head = 1;
+  repeated OfferItem items = 2;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package pb;
+
+option java_multiple_files = true;
+option java_package = "com.dabanshan.grpc";
+option java_outer_classname = "NotificationServiceProto";
+option objc_class_prefix = "DBS";
+
+import "notification.proto";
+
+service NotificationService {
+    rpc send (NotificationRequest) returns (NotificationReply);
+}
