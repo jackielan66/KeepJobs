@@ -1,0 +1,25 @@
+{
+  "entry": "src/index.js",
+  "extraBabelPlugins": [
+    "transform-decorators-legacy",
+    "transform-runtime",
+    ["import", { "libraryName": "antd-mobile", "libraryDirectory": "es", "style": true }]
+  ],
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:7701/",
+      "changeOrigin": true,
+      "pathRewrite": { "^/api" : "" }
+    }
+  },
+  "env": {
+    "development": {
+      "extraBabelPlugins": [
+        "dva-hmr"
+      ]
+    },
+    "production": {
+      "extraBabelPlugins": []
+    }
+  }
+}
