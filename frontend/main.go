@@ -6,8 +6,8 @@ import (
 	"strconv"
 
 	"github.com/emicklei/go-restful"
-	"github.com/laidingqing/dabanshan/common/config"
-	controllers "github.com/laidingqing/dabanshan/frontend/controllers"
+	"github.com/laidingqing/KeepJobs/common/config"
+	controllers "github.com/laidingqing/KeepJobs/frontend/controllers"
 	lumberjack "gopkg.in/natefinch/lumberjack.v2"
 )
 

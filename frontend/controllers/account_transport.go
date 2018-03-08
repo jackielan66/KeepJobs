@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"github.com/laidingqing/dabanshan/accounts/model"
-	"github.com/laidingqing/dabanshan/pb"
+	"github.com/laidingqing/KeepJobs/accounts/model"
+	"github.com/laidingqing/KeepJobs/pb"
 )
 
 //EncodeAccount pb to model for Account

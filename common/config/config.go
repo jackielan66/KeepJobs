@@ -55,5 +55,5 @@ func LoadDefaults() {
 	Logger.MaxAge = 30
 
 	Database.HostURI = "localhost:27017"
-	Database.DatabaseName = "dabanshan"
+	Database.DatabaseName = "keep_jobs"
 }

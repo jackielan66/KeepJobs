@@ -9,10 +9,10 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/laidingqing/dabanshan/accounts/service"
-	"github.com/laidingqing/dabanshan/common/config"
-	grpclb "github.com/laidingqing/dabanshan/common/registry"
-	pb "github.com/laidingqing/dabanshan/pb"
+	"github.com/laidingqing/KeepJobs/accounts/service"
+	"github.com/laidingqing/KeepJobs/common/config"
+	grpclb "github.com/laidingqing/KeepJobs/common/registry"
+	pb "github.com/laidingqing/KeepJobs/pb"
 	"google.golang.org/grpc"
 	lumberjack "gopkg.in/natefinch/lumberjack.v2"
 )

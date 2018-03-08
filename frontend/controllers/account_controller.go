@@ -7,12 +7,12 @@ import (
 	"strconv"
 
 	restful "github.com/emicklei/go-restful"
-	model "github.com/laidingqing/dabanshan/accounts/model"
-	"github.com/laidingqing/dabanshan/common/auth"
-	"github.com/laidingqing/dabanshan/common/clients"
-	. "github.com/laidingqing/dabanshan/common/controller"
-	"github.com/laidingqing/dabanshan/common/util"
-	"github.com/laidingqing/dabanshan/pb"
+	model "github.com/laidingqing/KeepJobs/accounts/model"
+	"github.com/laidingqing/KeepJobs/common/auth"
+	"github.com/laidingqing/KeepJobs/common/clients"
+	. "github.com/laidingqing/KeepJobs/common/controller"
+	"github.com/laidingqing/KeepJobs/common/util"
+	"github.com/laidingqing/KeepJobs/pb"
 )
 
 // AccountsController user api struct

@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.dabanshan.grpc.domain";
+option java_outer_classname = "DictProto";
+option objc_class_prefix = "DBS";
+
+package pb;
+
+message Dict {
+  string id = 1;
+  int32 classify = 2;
+  string code = 3;
+  string parent = 4;
+  string name = 5;
+  string firstChar = 6;
+}
+
+message CreateDictRequest {
+  Dict dict = 1;
+}
+
+message CreateDictResponse {
+  string id = 1;
+}
+
+message DeleteDictRequest {
+  string id = 1;
+}
+
+message DeleteDictResponse {
+  bool result = 1;
+}
